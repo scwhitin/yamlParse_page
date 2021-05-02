@@ -7,7 +7,7 @@ services:
     labels:
      - "traefik.enable=true"
      - "traefik.http.routers.yamlparse_tester.rule=Host(`yamlpath-tester.scwhitin.com`)"
-     - "traefik.http.services.yamlparse_tester.loadbalancer.server.port=80"
+     - "traefik.http.services.yamlparse_tester.loadbalancer.server.port=8080"
      - "traefik.http.routers.yamlparse_tester.entrypoints=https"
      - "traefik.http.routers.yamlparse_tester.tls=true"
 networks:

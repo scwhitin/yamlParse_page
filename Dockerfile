@@ -2,10 +2,7 @@ FROM python:alpine as base
 
 FROM base as build
 COPY requirements.txt .
-RUN pip install --user -r requirements.txt
-
-FROM base
-COPY --from=build /root/.local /root/.local
+RUN pip install -r requirements.txt
 ADD *.py ./
 ADD templates/ ./templates/
 ENTRYPOINT ["gunicorn"]
