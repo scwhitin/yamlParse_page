@@ -1,16 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home Page</title>
-    </head>
-    <body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>YAML Path Parser</title>
+  </head>
+  <body>
+    <div class="align-middle p-3">
+        <h1>YAML Path Parser</h1>
+    </div>
         <form action="/parse" method="post">
-        Query: <input type="text" name="input_query" size="100"><br><br>
-            <textarea rows="4" cols="50" name="input_info">Enter YML / JSON here...</textarea><br><br>
-            <input type="submit">
+            <div class="align-middle w-75 p-3 mb-3 form-group">
+                <label for="input_query">Input Query</label>
+                <input type="text" id="input_query" class="form-control" name="input_query" value="{{ input_query }}">
+            </div>
+            <div class="w-75 p-3 mb-3 form-group">
+                <label for="input_data">Enter YML / JSON here</label>
+                <textarea class="form-control" name="input_data" id="input_data" rows="{{ rows }}">{{ input_data }}</textarea>
+            </div>
+            <div class="p-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            
         </form>
-    </body>
+  </body>
 </html>

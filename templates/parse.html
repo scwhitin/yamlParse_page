@@ -1,14 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Parse Page</title>
-    </head>
-    <body>
-        <h1>Parsed Output:</h1>
-        <p>{{output_data}}<p>
-        <button onclick="document.location='/'">Return to Input Page</button> 
-    </body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>YAML Path Parser</title>
+  </head>
+  <body>
+    <div class="align-middle p-3">
+        <h1>{{header}}</h1>
+    </div>
+    <div class="p-3">
+        <textarea class="form-control textarea-autosize" name="output_data" id="output_data" rows="{{ rows }}">{{output_data|safe}}</textarea>
+    </div>
+    <form action="/" method="post">
+        <input type="hidden" id="input_query" name="input_query" value="{{ input_query }}">
+        <input type="hidden" id="input_data" name="input_data" value="{{ input_data }}">
+        <div class="p-3">
+            <button type="submit" class="btn btn-primary">Return to Input Page</button>
+        </div>
+    </form>
+  </body>
 </html>
